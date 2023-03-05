@@ -1,17 +1,20 @@
 // Access DOM
 const button = document.querySelector("button");
-let toDo = document.getElementById("todo");
-let checklist = document.getElementById("checklist");
-        
+const toDo = document.getElementById("todo");
+const checklist = document.getElementById("checklist");
 
-function submitToDo(){
+function submitToDo(text){
   const node = document.createElement("li");
-  const textNode = document.createTextNode(toDo.value);
-  console.log(textNode);
-  node.appendChild(textNode);
+  let textNode = document.createTextNode(text); // generate node using input value
+  const checkbox = document.createElement("input"); 
+  checkbox.type = "checkbox"; // create checkbox  
+  node.appendChild(checkbox);
+  node.appendChild(textNode); 
   checklist.appendChild(node); // add new task to the checklist
 }
 
-button.addEventListener("click", submitToDo);
+button.addEventListener("click", () => {
+  submitToDo(`${toDo.value}`);
+});
 
 
