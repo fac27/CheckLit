@@ -11,18 +11,18 @@
 </head>
 <body>
         <label for="todoName">Todo Name</label>
-        <input type="text" name="todoName" id="">
+        <input type="text" name="todoName" id="todo">
         <button type="submit">Add new Task</button>
 
-    <ul>
+    <!-- <ul>
        <li><input id="checkbox" type="checkbox"/><p class="todo">Do Homework</p></li> 
-    </ul>
+    </ul> -->
 
     
   <!-- Using <template>  -->
     <ul id="checklist">
       <li>
-        <span>checkbox</span>
+        <span><input id="checkbox" type="checkbox"/></span>
         <span>Apples</span>
       </li>
       <!-- existing data could optionally be included here -->
@@ -30,7 +30,7 @@
     
     <template id="checklistrow">
       <li>
-        <span class="record"></span>
+        <span class="checkbox"></span>
         <span></span>
       </li>
     </template>

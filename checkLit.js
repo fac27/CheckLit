@@ -1,28 +1,34 @@
-// Test to see if the browser supports the HTML template element by checking
-// for the presence of the template element's content attribute.
+const button = document.querySelector("button");
+
+button.addEventListener("click", () => {
+    // Test to see if the browser supports the HTML template element by checking for the presence of the template element's content attribute.
 if ('content' in document.createElement('template')) {
-    // Instantiate the table with the existing HTML tbody
-    // and the row with the template
+    // Instantiate the list with the existing HTML tbody and the row with the template
     const list = document.querySelector("ul");
     const template = document.querySelector('#checklistrow');
 
+    // Access user 'To Do' input value
+    const userInput = document.querySelector("input");
+
+    // Create checkbox
+    function newCheckbox() {
+    const checkbox = document.createElement("input"); 
+    checkbox.type = "checkbox"; // create checkbox
+    li[0].appendChild(checkbox); // append the checkbox to the first column of the li (span[0])
+    }  
+
     // Clone the new row and insert it into the table
     const clone = template.content.cloneNode(true);
-    let td = clone.querySelectorAll("li");
-    td[0].textContent = "1235646565";
-    td[1].textContent = "Stuff";
+    let li = clone.querySelectorAll("span");
+    newCheckbox()
+    li[1].textContent = userInput.value;
 
     list.appendChild(clone);
 
-    // Clone the new row and insert it into the table
-    const clone2 = template.content.cloneNode(true);
-    td = clone2.querySelectorAll("li");
-    td[0].textContent = "0384928528";
-    td[1].textContent = "Acme Kidney Beans 2";
-
-    ul.appendChild(clone2);
-
 } else {
-  // Find another way to add the rows to the table because
-  // the HTML template element is not supported.
+  // Find another way to add the rows to the table because  the HTML template element is not supported.
 }
+
+})
+
+
