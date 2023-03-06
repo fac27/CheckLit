@@ -10,17 +10,10 @@ if ('content' in document.createElement('template')) {
     // Access user 'To Do' input value
     const userInput = document.querySelector("input");
 
-    // Create checkbox
-    function newCheckbox() {
-    const checkbox = document.createElement("input"); 
-    checkbox.type = "checkbox"; // create checkbox
-    li[0].appendChild(checkbox); // append the checkbox to the first column of the li (span[0])
-    }  
-
     // Clone the new row and insert it into the table
     const clone = template.content.cloneNode(true);
     let li = clone.querySelectorAll("span");
-    newCheckbox()
+    // newCheckbox()
     li[1].textContent = userInput.value;
 
     list.appendChild(clone);
