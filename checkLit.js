@@ -1,6 +1,7 @@
 // Access DOM
 const button = document.querySelector("button");
 
+
 const checklist = document.querySelector("ul");
 
 const userInput = document.querySelector("#todo");
