@@ -5,8 +5,10 @@ const button = document.querySelector("button");
 const checklist = document.querySelector("ul");
 
 const userInput = document.querySelector("#todo");
-  
 
+const checkbox = document.querySelector("#checkbox")
+const task = document.querySelector(".task")
+const todos = document.querySelectorAll(".Todos")
 
 function submitToDo(text) {
 
@@ -35,9 +37,20 @@ function submitToDo(text) {
 
 }
 
+function checked(){
+    checkbox.click()
+    task.classList.add("lineThrough")
+}
+
+function removeTodo(){
+    todos[todos.length -1].remove();
+    }
+
 button.addEventListener("click", () => {
   submitToDo(`${userInput.value}`)
 });
+
+
 
 
 
