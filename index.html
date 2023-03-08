@@ -6,13 +6,19 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>CheckLit</title>
     <link rel="stylesheet" href="styles.css">
-
-    
+    <link href="https://fonts.googleapis.com/css2?family=Fredoka+One&family=Playfair+Display:wght@400;500;600;700&family=Poppins:wght@400;500&display=swap" rel="stylesheet">
 </head>
 <body>
-        <label for="todoName">Todo Name</label>
-        <input type="text" name="todoName" id="todo">
-        <button type="submit">Add new Task</button>
+  <div  class="m-left">
+    <img src="/Img/logo.jpeg" width="300px">
+    <h1 class="text-xl stack-m"> CheckLit</h1>
+    <h2 class="stack-m text-l">My lists</h2>
+    <h2 class="stack-m text-l">New list +</h2>
+  </div>
+
+  <label for="todoName" class="stack-m text-m">Add item +</label>
+  <input type="text" name="todoName" id="todo" class="stack-m">
+  <button type="submit" class="stack-m">submit to list</button>
 
 
       <!-- Using <template>  -->
@@ -25,7 +31,6 @@
         <span><input id="checkbox" type="checkbox"/></span>
         <span class="task">Pears</span>
       </li>
-      <!-- existing data could optionally be included here -->
 
     </ul>
     

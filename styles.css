@@ -1,3 +1,9 @@
+body {
+    display: flex;
+    flex-direction: column;
+    font-family: 'Fredoka One';
+}
+
 *{
     margin: 0;
     padding: 0;
@@ -19,4 +25,34 @@ li p{
 .lineThrough{
     text-decoration: line-through;
     color: gray;
+}
+
+/* CSS Primitives */
+
+/* Text */
+
+.text-xl {
+    font-size: 3rem;
+}
+
+.text-l {
+    font-size: 2rem;
+}
+
+.text-m {
+    font-size: 1rem;
+}
+
+
+
+
+/* Margin */
+.m-left {
+    margin-left: 2rem;
+}
+
+/* Spacing */
+
+.stack-m {
+    margin-top: 1rem;
 }
