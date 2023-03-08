@@ -50,6 +50,25 @@ function equal(actual, expected, message) {
 
   
 
+  test("Submitting a new task adds it to the list", () => {
+    submitToDo("test input") // call function, replicating user button "click"
+
+    const listItem = document.querySelector("#checklist li:last-child"); // access the output of the test submitToDo("test input")
+    const textInput = listItem.querySelector("span:last-child").textContent;
+
+
+    equal(checklist.children.length, 2); // checks the <ul> length to see if new <li> has been added (submitToDo adds a new <li> to the list so there should now be 2 in total (1 - apples, 2 - test input)
+    equal(checklist.children[1].tagName, "LI"); // checks for new <li> element
+    equal(textInput, "test input"); // checks second <span> text value wrapped in the the <li>
+
+    
+    listItem.remove() // remove the test output from the DOM
+
+  });
+
+
+
+
 
 // checkbox dom element
   const checkbox = document.querySelector("#checkbox");
