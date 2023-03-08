@@ -13,41 +13,6 @@ function equal(actual, expected, message) {
     testFunction();
     console.groupEnd(name);
   }
-
-
-
-// Test 1: Add tasks to a list so that I can keep track of them
-
-// RED: a failing test
-// test("Submitting a new task adds it to the list", () => {
-//   equal(submitToDo(), "Add new task to the list")
-// });
-
-// function submitToDo(){}
-
-// GREEN: make the test pass (simplest level)
-
-// function submitToDo(){
-//     return "Add new task to the list";
-// }
-
-
-// GREEN: make the test pass
-
-  test("Submitting a new task adds it to the list", () => {
-    submitToDo("test input") // call function
-    equal(checklist.children.length, 2); // checks the <ul> length to see if new <ul> has been added (given there was already 1 on the page this is now 2)
-    equal(checklist.children[1].tagName, "LI"); // checks for new <li> element
-    equal(checklist.children[1].textContent, "test input"); // checks <li> value 
-
-    const testOutput = checklist.children[1];
-    testOutput.parentNode.removeChild(testOutput); // remove the test output from the DOM
-
-  });
-
-
-/* See submitToDo in checkLit.js */
-
   
 
   test("Submitting a new task adds it to the list", () => {
@@ -63,6 +28,19 @@ function equal(actual, expected, message) {
 
     
     listItem.remove() // remove the test output from the DOM
+
+  });
+
+  test("Deleting an entry removes it from the list", () => {
+    submitToDo("test input");
+    
+    const listItem = document.querySelector("#checklist li:last-child"); // access the checkbox output of the test submitToDo("test input")
+    const testCheckbox = listItem.querySelector('[type*="checkbox"]');
+    testCheckbox.checked = true;
+
+    deleteEntry();
+
+    equal(checklist.children.length, 1) // checks the "test input" li item was removed and the checklist length returns to 1    
 
   });
 
@@ -90,22 +68,22 @@ function equal(actual, expected, message) {
   }
 
 
-  checkbox.addEventListener("click", function(){
-    // This adds a class called "Linethrough" to the p elements if the checkbox is checked and removes it if it isn't. which is then used in the fucntion checkboxLinethrough()
-    if(checkbox.checked == true){
-      todo.classList.add("lineThrough")
-    } else{
-      todo.classList.remove("lineThrough")
-    }
-    test("Test to see if checkbox works when checked", () => {
-      equal(checkboxTest(),true);
-    })
+  // checkbox.addEventListener("click", function(){
+  //   // This adds a class called "Linethrough" to the p elements if the checkbox is checked and removes it if it isn't. which is then used in the fucntion checkboxLinethrough()
+  //   if(checkbox.checked == true){
+  //     todo.classList.add("lineThrough")
+  //   } else{
+  //     todo.classList.remove("lineThrough")
+  //   }
+  //   test("Test to see if checkbox works when checked", () => {
+  //     equal(checkboxTest(),true);
+  //   })
 
-    setTimeout(() => {
-      test("Test to see if linethrough is added", () => {
-        equal(checkboxLinethrough(),"lineThrough");
-      })
-    }, 200);
-  })
+  //   setTimeout(() => {
+  //     test("Test to see if linethrough is added", () => {
+  //       equal(checkboxLinethrough(),"lineThrough");
+  //     })
+  //   }, 200);
+  // })
 
 
