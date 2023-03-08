@@ -14,11 +14,25 @@
         <input type="text" name="todoName" id="todo">
         <button type="submit">Add new Task</button>
 
-    <ul id="checklist">
-       <li class="task"><input id="checkbox" type="checkbox"/><p class="todo">Do Homework</p></li> 
-       <li class="task"><input id="checkbox" type="checkbox"/><p class="todo">Go Shopping</p></li>   
-    </ul>
 
+      <!-- Using <template>  -->
+    <ul id="checklist">
+      <li>
+        <span><input id="checkbox" type="checkbox"/></span>
+        <span>Apples</span>
+      </li>
+      <!-- existing data could optionally be included here -->
+
+    </ul>
+    
+    <template id="checklistrow">
+      <li>
+        <span></span>
+        <span></span>
+      </li>
+    </template>
+    
+    
 
 
 
