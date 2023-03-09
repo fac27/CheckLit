@@ -9,10 +9,14 @@ const userInput = document.querySelector("#todo");
 
 
 const deleteButton = document.querySelector("#deleteButton");
+
+const domCheckbox = document.createElement("input");
+domCheckbox.type = "checkbox";
   
 
 
-const checkbox = document.querySelector("#checkbox")
+
+
 const task = document.querySelector(".task")
 const todos = document.querySelectorAll(".Todos")
 
@@ -43,9 +47,9 @@ function submitToDo(text) {
 }
 
 function checked(){
-    checkbox.click()
-    task.classList.add("lineThrough")
+    domCheckbox.click();
 }
+
 
 function removeTodo(){
     todos[todos.length -1].remove();
