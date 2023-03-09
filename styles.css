@@ -58,6 +58,14 @@ li p{
     margin-left: 2rem;
 }
 
+.m-right {
+    margin-right: 2rem;
+}
+
+.text-right {
+    text-align: right;
+}
+
 /* Spacing */
 
 .stack-l {
