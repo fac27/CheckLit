@@ -8,6 +8,7 @@ function equal(actual, expected, message) {
   }
 }
 
+
 function test(name, testFunction) {
   console.group(name);
   testFunction();
@@ -56,6 +57,19 @@ function test(name, testFunction) {
 
   });
 
+  test("Deleting an entry removes it from the list", () => {
+    submitToDo("test input");
+    
+    const listItem = document.querySelector("#checklist li:last-child"); // access the checkbox output of the test submitToDo("test input")
+    const testCheckbox = listItem.querySelector('[type*="checkbox"]');
+    testCheckbox.checked = true;
+
+    deleteEntry();
+
+    equal(checklist.children.length, 1) // checks the "test input" li item was removed and the checklist length returns to 1    
+
+  });
+
 
   test("Test to see if checkbox works when checked", () => {
     checked();
@@ -67,5 +81,6 @@ function test(name, testFunction) {
     removeTodo()
     equal(checklist.childElementCount,1);
   })
+
 
 

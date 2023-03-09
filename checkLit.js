@@ -1,10 +1,14 @@
 // Access DOM
-const button = document.querySelector("button");
-
+const button = document.querySelector("#addNew");
 
 const checklist = document.querySelector("ul");
 
 const userInput = document.querySelector("#todo");
+
+
+const deleteButton = document.querySelector("#deleteButton");
+  
+
 
 const checkbox = document.querySelector("#checkbox")
 const task = document.querySelector(".task")
@@ -26,7 +30,6 @@ function submitToDo(text) {
     const checkbox = document.createElement("input"); 
     checkbox.type = "checkbox"; // create checkbox
     li[0].appendChild(checkbox); // append the checkbox to the first <span> element wrapped in <li>
-
     li[1].textContent = text; // sets the textContent property of the second <span> element to the value of the text parameter.
 
     checklist.appendChild(clone);
@@ -47,8 +50,22 @@ function removeTodo(){
     }
 
 button.addEventListener("click", () => {
-  submitToDo(`${userInput.value}`)
+  submitToDo(`${userInput.value}`);
 });
+
+function deleteEntry(){
+  const checkboxAll = document.querySelectorAll('[type*="checkbox"]');
+  checkboxAll.forEach(checkbox => {
+    if (checkbox.checked == true){
+      const listItem = checkbox.parentNode.parentNode;
+      listItem.remove();
+    }
+  })
+}
+
+deleteButton.addEventListener("click", () => {
+  deleteEntry();
+})
 
 
 
