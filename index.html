@@ -18,21 +18,16 @@
     <h2 class="stack-m text-l">New list</h2><button>+</button>
   </div>
 
-        <label for="todoName">Todo Name</label>
-        <input type="text" name="todoName" id="todo">
-        <button type="submit" id="addNew">Add new Task</button>
-
-
-
       <!-- Using <template>  -->
   <div class="card m-left stack-l">
     <h3 class="text-l">List heading</h3>
     <label for="todoName" class="stack-m text-m">Add item +</label>
     <input type="text" name="todoName" id="todo" class="stack-m">
-    <button type="submit" class="stack-m">+</button>
+    <button type="submit" class="stack-m" id="addNew">+</button>
 
     <ul id="checklist">
       <li class="Todos">
+
         <span></span>
         <span class="task"></span>
       </li>
@@ -45,10 +40,12 @@
         <span></span>
       </li>
     </template>
+
+    <label for="deleteItem">Remove item</label>
+    <button type="submit" id="deleteButton">-</button>  
   </div>
     
-    <label for="deleteItem">Remove</label>
-    <button type="submit" id="deleteButton">Remove checked item</button>  
+
 
 
 
