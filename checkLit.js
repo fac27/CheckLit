@@ -1,5 +1,5 @@
 // Access DOM
-const button = document.querySelector("button");
+const button = document.querySelector('[type*="submit"]');
 
 
 const checklist = document.querySelector("ul");
