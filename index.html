@@ -6,16 +6,31 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>CheckLit</title>
     <link rel="stylesheet" href="styles.css">
-
-    
+    <link href="https://fonts.googleapis.com/css2?family=Fredoka+One&family=Playfair+Display:wght@400;500;600;700&family=Poppins:wght@400;500&display=swap" rel="stylesheet">
 </head>
 <body>
+
+  <div  class="m-left">
+    <img src="/Img/logo.jpeg" width="300px">
+    <h1 class="text-xl stack-m text-right m-right"> CheckLit</h1>
+    <h2 class="text-m stack-m text-right m-right">Unlock your productivity potential</h2>
+    <h2 class="stack-l text-l">My lists</h2>
+    <h2 class="stack-m text-l">New list</h2><button>+</button>
+  </div>
+
         <label for="todoName">Todo Name</label>
         <input type="text" name="todoName" id="todo">
         <button type="submit" id="addNew">Add new Task</button>
 
 
+
       <!-- Using <template>  -->
+  <div class="card m-left stack-l">
+    <h3 class="text-l">List heading</h3>
+    <label for="todoName" class="stack-m text-m">Add item +</label>
+    <input type="text" name="todoName" id="todo" class="stack-m">
+    <button type="submit" class="stack-m">+</button>
+
     <ul id="checklist">
       <li class="Todos">
         <span><input id="checkbox" type="checkbox"/></span>
@@ -25,7 +40,6 @@
         <span><input id="checkbox" type="checkbox"/></span>
         <span class="task">Pears</span>
       </li>
-      <!-- existing data could optionally be included here -->
 
     </ul>
     
@@ -35,6 +49,7 @@
         <span></span>
       </li>
     </template>
+  </div>
     
     <label for="deleteItem">Remove</label>
     <button type="submit" id="deleteButton">Remove checked item</button>  

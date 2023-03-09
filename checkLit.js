@@ -1,5 +1,7 @@
 // Access DOM
+
 const button = document.querySelector("#addNew");
+
 
 const checklist = document.querySelector("ul");
 

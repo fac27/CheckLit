@@ -1,8 +1,16 @@
-*{
+body {
+    display: flex;
+    flex-direction: column;
+    font-family: 'Fredoka One';
+}
+
+/* *{
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-}
+} */
+
+/* List */
 
 ul{
     margin: 10px;
@@ -19,4 +27,51 @@ li p{
 .lineThrough{
     text-decoration: line-through;
     color: gray;
+}
+
+
+
+.card {
+    background-color: rgba(172, 255, 47, 0.428);
+}
+
+/* CSS Primitives */
+
+/* Text */
+
+.text-xl {
+    font-size: 3rem;
+}
+
+.text-l {
+    font-size: 2rem;
+}
+
+.text-m {
+    font-size: 1rem;
+}
+
+
+
+/* Margin */
+.m-left {
+    margin-left: 2rem;
+}
+
+.m-right {
+    margin-right: 2rem;
+}
+
+.text-right {
+    text-align: right;
+}
+
+/* Spacing */
+
+.stack-l {
+    margin-top: 2rem;
+}
+
+.stack-m {
+    margin-top: 1rem;
 }
