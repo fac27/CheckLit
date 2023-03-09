@@ -66,7 +66,16 @@ li p{
     text-align: right;
 }
 
+
+.text-center {
+    text-align: center;
+}
+
 /* Spacing */
+
+.stack-xl {
+    margin-top: 3rem;
+}
 
 .stack-l {
     margin-top: 2rem;
