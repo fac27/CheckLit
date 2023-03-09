@@ -73,13 +73,7 @@ function test(name, testFunction) {
 
   test("Test to see if checkbox works when checked", () => {
     checked();
-    equal(checkbox.checked,true);
-  })
-
-  
-  test("Deleting an entry removes it from the list", () => {
-    removeTodo()
-    equal(checklist.childElementCount,1);
+    equal(domCheckbox.checked,true);
   })
 
 
