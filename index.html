@@ -9,21 +9,28 @@
     <link href="https://fonts.googleapis.com/css2?family=Fredoka+One&family=Playfair+Display:wght@400;500;600;700&family=Poppins:wght@400;500&display=swap" rel="stylesheet">
 </head>
 <body>
+    <div class="newListForm space-evenly flexColumn displayNone ">
+        <label for="ListName">List Name:</label>
+        <input type="text" name="ListName" id="ListName">
+        <button type="submit" id="newList">Add new List</button>
+    </div>
 
   <div  class="m-left">
     <img src="/Img/logo.jpeg" width="300px">
     <h1 class="text-xl stack-m text-right m-right"> CheckLit</h1>
     <h2 class="text-m stack-m text-right m-right">Unlock your productivity potential</h2>
     <h2 class="stack-l text-l">My lists</h2>
-    <h2 class="stack-m text-l">New list</h2><button>+</button>
+    <h2 class="stack-m text-l">New list</h2><button id="list">+</button>
   </div>
 
       <!-- Using <template>  -->
-  <div class="card m-left stack-l">
+    <div class="listContainer flexRow">
+  <div class="card m-right stack-m >
     <h3 class="text-l">List heading</h3>
     <label for="todoName" class="stack-m text-m">Add item +</label>
     <input type="text" name="todoName" id="todo" class="stack-m">
     <button type="submit" class="stack-m" id="addNew">+</button>
+
 
     <ul id="checklist">
       <li class="Todos">
@@ -44,6 +51,11 @@
     <label for="deleteItem">Remove item</label>
     <button type="submit" id="deleteButton">-</button>  
   </div>
+
+  
+ 
+  
+</div>
     
 
 
