@@ -12,6 +12,14 @@ const deleteButton = document.querySelector("#deleteButton");
 
 const domCheckbox = document.createElement("input");
 domCheckbox.type = "checkbox";
+
+const listFormBtn = document.querySelector("#list");
+
+const submitList = document.querySelector("#newList")
+
+const newListform = document.querySelector(".newListForm");
+
+const listContainer = document.querySelector(".listContainer");
   
 
 
@@ -45,6 +53,24 @@ function submitToDo(text) {
 }
 
 }
+
+function newList(){
+const card = document.createElement("div");
+let classesToAdd = [ "card", "m-right", "stack-m"];
+card.classList.add(...classesToAdd)
+listContainer.appendChild(card);
+
+}
+
+listFormBtn.addEventListener("click", function(){
+    newListform.classList.remove("displayNone")
+})
+
+
+submitList.addEventListener("click", function(){
+    newList();
+    newListform.classList.add("displayNone")
+})
 
 function checked(){
     domCheckbox.click();
