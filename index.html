@@ -9,59 +9,52 @@
     <link href="https://fonts.googleapis.com/css2?family=Fredoka+One&family=Playfair+Display:wght@400;500;600;700&family=Poppins:wght@400;500&display=swap" rel="stylesheet">
 </head>
 <body>
-    <div class="newListForm space-evenly flexColumn displayNone ">
-        <label for="ListName">List Name:</label>
-        <input type="text" name="ListName" id="ListName">
-        <button type="submit" id="newList">Add new List</button>
-    </div>
-
   <div  class="m-left">
-    <img src="/Img/logo.jpeg" width="300px">
+    <img src="/Img/logo.jpeg" width="300px" class="text-right">
     <h1 class="text-xl stack-m text-right m-right"> CheckLit</h1>
     <h2 class="text-m stack-m text-right m-right">Unlock your productivity potential</h2>
+  </div>
+  
+  <div class="m-left">
     <h2 class="stack-l text-l">My lists</h2>
-    <h2 class="stack-m text-l">New list</h2><button id="list">+</button>
+    <label class="stack-m text-l">New list</label>
+    <button id="list" class="text-xl">+</button>
+  
+
+    <div class="newListForm space-evenly flexColumn displayNone stack-l">
+      <input type="text" name="ListName" id="ListName" placeholder='"Shopping list"'>
+      <button type="submit" id="newList" class="text-xl">+</button>
+    </div>
   </div>
 
-      <!-- Using <template>  -->
-    <div class="listContainer flexRow">
-  <div class="card m-right stack-m >
-    <h3 class="text-l">List heading</h3>
-    <label for="todoName" class="stack-m text-m">Add item +</label>
-    <input type="text" name="todoName" id="todo" class="stack-m">
-    <button type="submit" class="stack-m" id="addNew">+</button>
 
-
-    <ul id="checklist">
-      <li class="Todos">
-
-        <span></span>
-        <span class="task"></span>
-      </li>
-     
-    </ul>
+  <div class="listContainer flexColumn center stack-l">
+    <div id="card" class="card m-right stack-l" >
+      <h3 class="text-l" id="list-heading">Shopping list</h3>
+      <label for="todoName" class="stack-m text-m">Add item</label>
+      <button type="submit" class="stack-m text-xl" id="addNew">+</button>
+      <input type="text" name="todoName" id="todo" class="stack-m">
     
-    <template id="checklistrow">
-      <li>
-        <span></span>
-        <span></span>
-      </li>
-    </template>
+      <ul id="checklist">
+        <li class="Todos">
+          <span></span>
+          <span class="task"></span>
+        </li>
+      </ul>
+    
+      <template id="checklistrow">
+        <li>
+          <span></span>
+          <span></span>
+        </li>
+      </template>
 
     <label for="deleteItem">Remove item</label>
-    <button type="submit" id="deleteButton">-</button>  
-  </div>
+    <button type="submit" id="deleteButton" class="text-xl">-</button>  
 
-  
- 
-  
+  </div>
 </div>
     
-
-
-
-
-
     
 </body>
 <script src="/checkLit.js"></script>

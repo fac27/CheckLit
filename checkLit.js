@@ -2,11 +2,9 @@
 
 const button = document.querySelector("#addNew");
 
-
 const checklist = document.querySelector("ul");
 
 const userInput = document.querySelector("#todo");
-
 
 const deleteButton = document.querySelector("#deleteButton");
 
@@ -21,10 +19,6 @@ const newListform = document.querySelector(".newListForm");
 
 const listContainer = document.querySelector(".listContainer");
   
-
-
-
-
 const task = document.querySelector(".task")
 const todos = document.querySelectorAll(".Todos")
 
@@ -51,25 +45,49 @@ function submitToDo(text) {
 } else {
   // Find another way to add the rows to the table because  the HTML template element is not supported.
 }
-
 }
 
-function newList(){
-const card = document.createElement("div");
-let classesToAdd = [ "card", "m-right", "stack-m"];
-card.classList.add(...classesToAdd)
-listContainer.appendChild(card);
+button.addEventListener("click", () => {
+  const errorMess = document.createElement("p");
 
+  if (userInput.value !== ''){
+    submitToDo(`${userInput.value}`);
+  }
+else {
+  errorMess.innerText = "Cannot add empty item";
+  checklist.appendChild(errorMess);
+  setTimeout(() => checklist.removeChild(errorMess), 1000)
 }
+});
+
+function newList() {
+  const ogCard = document.querySelector('#card');
+  let cloneCard = ogCard.cloneNode(true);
+  const newHeading = document.querySelector('#ListName');
+  const listHeading = cloneCard.querySelector('#list-heading');
+  if (newHeading.value !== ''){
+  listHeading.innerText = newHeading.value;
+  listContainer.appendChild(cloneCard);
+  newListform.classList.add("displayNone")
+  }
+  else {
+    const errorMess = document.createElement("p");
+    errorMess.innerText = "List heading cannot be empty";
+    newListform.appendChild(errorMess);
+    setTimeout(() => newListform.removeChild(errorMess), 1000)
+    
+  }
+}
+
 
 listFormBtn.addEventListener("click", function(){
-    newListform.classList.remove("displayNone")
+    newListform.classList.remove("displayNone");
+
 })
 
 
 submitList.addEventListener("click", function(){
     newList();
-    newListform.classList.add("displayNone")
 })
 
 function checked(){
@@ -77,13 +95,11 @@ function checked(){
 }
 
 
-function removeTodo(){
-    todos[todos.length -1].remove();
-    }
+// function removeTodo(){
+//     todos[todos.length -1].remove();
+//     }
 
-button.addEventListener("click", () => {
-  submitToDo(`${userInput.value}`);
-});
+
 
 function deleteEntry(){
   const checkboxAll = document.querySelectorAll('[type*="checkbox"]');
