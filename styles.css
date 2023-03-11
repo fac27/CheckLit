@@ -39,27 +39,43 @@ li p{
 .newListForm{
     width: 300px;
     height: 300px;
-    background-color: rebeccapurple;
-    position: absolute;
+    background-color:#af2fcc;
+    /* position: absolute; */
     top: 50%;
     left: 50%;
-    transform: translate(-50%,-50%);
+    /* transform: translate(-50%,-50%); */
+    border-radius: 50%;
 }
 
 .listContainer{
     width: 100%;
     min-height: 40vh;
     height: auto;
-    background-color: rgb(150, 132, 132);
+    border: 1px solid red;
     flex-wrap: wrap;
 }
 
 
 .card {
-    width: 20%;
+    width: 80%;
     height: 300px;
     background-color: rgba(172, 255, 47, 0.428);
     overflow: scroll;
+}
+
+button {
+  font-family: 'Fredoka One';
+  border: none;
+  background: none;
+}
+
+button:hover {
+  color: blue;
+}
+
+input {
+  font-family: 'Fredoka One';
+  font-size: large;
 }
 
 /* CSS Primitives */
@@ -67,6 +83,10 @@ li p{
 
 
 /* Text */
+
+.text-xxl {
+  font-size: 5rem;
+}
 
 .text-xl {
     font-size: 3rem;
@@ -105,7 +125,8 @@ li p{
     margin-top: 1rem;
 }
 
-/* flex */
+/* Flex */
+
 .flexRow{
     display: flex;
     flex-direction: row;
