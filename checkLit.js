@@ -2,6 +2,8 @@
 
 const button = document.querySelector("#addNew");
 
+const btn = document.querySelectorAll("button");
+
 const checklist = document.querySelector("ul");
 
 const userInput = document.querySelector("#todo");
@@ -22,7 +24,7 @@ const listContainer = document.querySelector(".listContainer");
 const task = document.querySelector(".task")
 const todos = document.querySelectorAll(".Todos")
 
-function submitToDo(text) {
+function submitToDo(text,ul) {
 
 // Test to see if the browser supports the HTML template element by checking for the presence of the template element's content attribute.
   if ('content' in document.createElement('template')) {
@@ -40,6 +42,12 @@ function submitToDo(text) {
     li[0].appendChild(checkbox); // append the checkbox to the first <span> element wrapped in <li>
     li[1].textContent = text; // sets the textContent property of the second <span> element to the value of the text parameter.
 
+    if(ul){
+        ul.appendChild(clone);
+    } else{
+        checklist.appendChild(clone);
+    }
+
     checklist.appendChild(clone);
 
 } else {
@@ -47,24 +55,45 @@ function submitToDo(text) {
 }
 }
 
-button.addEventListener("click", () => {
-  const errorMess = document.createElement("p");
 
-  if (userInput.value !== ''){
-    submitToDo(`${userInput.value}`);
-  }
-else {
-  errorMess.innerText = "Cannot add empty item";
-  checklist.appendChild(errorMess);
-  setTimeout(() => checklist.removeChild(errorMess), 1000)
-}
-});
+
+
+    button.addEventListener("click", () => {
+        const errorMess = document.createElement("p");
+      
+        if (userInput.value !== ''){
+          submitToDo(`${userInput.value}`);
+          console.log("working")
+        }
+      else {
+        errorMess.innerText = "Cannot add empty item";
+        checklist.appendChild(errorMess);
+        setTimeout(() => checklist.removeChild(errorMess), 1000)
+      }
+      });
+
+
+      btn.forEach(btn => {
+        btn.addEventListener("click", function(){
+            console.log("!")
+        })
+      })
+
+      
+
 
 function newList() {
   const ogCard = document.querySelector('#card');
   let cloneCard = ogCard.cloneNode(true);
   const newHeading = document.querySelector('#ListName');
   const listHeading = cloneCard.querySelector('#list-heading');
+  const btnClone = cloneCard.querySelector("button");
+  const inputClone = cloneCard.querySelector("input");
+  const ulClone = cloneCard.querySelector("ul")
+  btnClone.addEventListener("click", function(){
+    submitToDo(inputClone.value,ulClone)
+  })
+  
   if (newHeading.value !== ''){
   listHeading.innerText = newHeading.value;
   listContainer.appendChild(cloneCard);
@@ -79,6 +108,56 @@ function newList() {
   }
 }
 
+// function newList2() {
+//    const newCard = document.createElement("div");
+//    let classesToAdd = [ 'card', 'm-right', 'stack-l' ];
+//    newCard.classList.add(...classesToAdd)
+//    const newHeading = document.querySelector('#ListName');
+//    let newHeader = document.createElement("h3")
+//    newHeader.id = "list-heading"; newHeader.classList.add("text-l");
+//    newHeader.innerHTML = newHeading.value;
+//    newCard.appendChild(newHeader);
+//    let newLabel = document.createElement("label")
+//    let classesToAdd2 = [ "stack-m", "text-m" ];
+//    newLabel.setAttribute("for", "todoName");
+//    newLabel.classList.add(...classesToAdd2)
+//    newLabel.innerHTML = "Add item";
+//    newCard.appendChild(newLabel);
+//    let newBtn = document.createElement("button");
+//    newBtn.classList.add("stack-m"); newBtn.classList.add("text-xl");
+//    newBtn.innerHTML = "+";
+//    newCard.appendChild(newBtn)
+//    let newInput = document.createElement("input");
+//    newLabel.setAttribute("name", "todoName");
+//    newInput.id = "todo"; newInput.classList.add("stack-m");
+//    newCard.appendChild(newInput);
+//    let newUl = document.createElement("ul");
+//    newUl.id = "checklist";
+//    newCard.appendChild(newUl);
+//    function newTodo(){
+//     let newLi = document.createElement("li")
+//     newLi.classList.add("Todos");
+//     newUl.appendChild(newLi);
+//     let newCheckbox = document.createElement("input")
+//     newCheckbox.setAttribute("type", "checkbox"); 
+//     newLi.appendChild(newCheckbox);
+//     let todoName = document.createElement("span")
+//     todoName.innerText = newInput.value;
+//     newLi.appendChild(todoName);
+//    }
+   
+
+//    newBtn.addEventListener("click", function(){
+// console.log(newInput.value)
+// newTodo()
+//    })
+  
+   
+   
+//    listContainer.appendChild(newCard);
+
+//   }
+
 
 listFormBtn.addEventListener("click", function(){
     newListform.classList.remove("displayNone");
@@ -87,7 +166,7 @@ listFormBtn.addEventListener("click", function(){
 
 
 submitList.addEventListener("click", function(){
-    newList();
+    newList() 
 })
 
 function checked(){
