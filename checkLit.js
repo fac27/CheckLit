@@ -52,13 +52,6 @@ button.addEventListener("click", () => {
 function newList() {
   const ogCard = document.querySelector("#card");
   const cloneCard = ogCard.cloneNode(true);
-  const newHeading = document.querySelector("#ListName");
-  const listHeading = cloneCard.querySelector("#list-heading");
-  const btnClone = cloneCard.querySelector("#addNew");
-  const inputClone = cloneCard.querySelector("input");
-  const ulClone = cloneCard.querySelector("ul");
-  const closeBtnClone = cloneCard.querySelector('#close-list')
-
 
 // set new list background color
   const colorArr = ["#70e4ef", "#E2EF70", "#EF709D", "#F038FF", "#3772FF"]
@@ -66,13 +59,17 @@ function newList() {
   cloneCard.style.backgroundColor = colorArr[randomIndex];
 
 // prevent ul items from copying onto new list card
+  const inputClone = cloneCard.querySelector("input");  
+  const btnClone = cloneCard.querySelector("#addNew");
+  const ulClone = cloneCard.querySelector("ul");
   ulClone.innerHTML = "";
-  btnClone.addEventListener("click", function () {
+  btnClone.addEventListener("click", () => {
     submitToDo(inputClone.value, ulClone);
     inputClone.value = "";
   });
 
 // call closeList() - this can only be called on cloned cards as deleting the original prevents future cloning
+  const closeBtnClone = cloneCard.querySelector('#close-list');    
   closeBtnClone.addEventListener("click", () => closeList(cloneCard));
 
 // enable submitToDo() on newList card
@@ -92,6 +89,9 @@ function newList() {
   deleteBtnClone.addEventListener("click", () => deleteEntry());
 
 // create new list
+const newHeading = document.querySelector("#ListName");
+const listHeading = cloneCard.querySelector("#list-heading");
+
   if (newHeading.value !== "") { 
     listHeading.innerText = newHeading.value;
     newHeading.value = "";
@@ -105,6 +105,8 @@ function newList() {
     setTimeout(() => newListform.removeChild(errorMess), 1000);
   }
 }
+
+// END newList()
 
 // 
 listFormBtn.addEventListener("click", function () {
@@ -141,11 +143,3 @@ deleteButton.addEventListener("click", () => {
 function closeList(card) {
   card.remove();
 }
-
-// separate closeList() function for original card
-// function closeOgList() {
-//   document.getElementById("card").className = "displayNone" // remove original card from view
-// }
-
-// const closeBtn = document.querySelector('#close-list');
-// closeBtn.addEventListener("click", () => closeOgList);
