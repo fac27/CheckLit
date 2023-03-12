@@ -1,26 +1,16 @@
 // Access DOM
 
 const button = document.querySelector("#addNew");
-
 const btn = document.querySelectorAll("button");
-
 const checklist = document.querySelector("ul");
-
 const userInput = document.querySelector("#todo");
-
 const deleteButton = document.querySelector("#deleteButton");
-
 const domCheckbox = document.createElement("input");
 domCheckbox.type = "checkbox";
-
 const listFormBtn = document.querySelector("#list");
-
 const submitList = document.querySelector("#newList")
-
 const newListform = document.querySelector(".newListForm");
-
 const listContainer = document.querySelector(".listContainer");
-  
 const task = document.querySelector(".task")
 const todos = document.querySelectorAll(".Todos")
 
@@ -87,12 +77,22 @@ function newList() {
   let cloneCard = ogCard.cloneNode(true);
   const newHeading = document.querySelector('#ListName');
   const listHeading = cloneCard.querySelector('#list-heading');
-  const btnClone = cloneCard.querySelector("button");
+  const btnClone = cloneCard.querySelector("#addNew");
   const inputClone = cloneCard.querySelector("input");
   const ulClone = cloneCard.querySelector("ul")
-  btnClone.addEventListener("click", function(){
+  btnClone.addEventListener("click", () => {
+    if (inputClone.value !== ''){
     submitToDo(inputClone.value,ulClone)
+  }
+  else {
+    const errorMess = document.createElement("p");
+    errorMess.innerText = "Cannot add empty item";
+    ulClone.appendChild(errorMess);
+    setTimeout(() => ulClone.removeChild(errorMess), 1000)
+  }
   })
+  const deleteBtnClone = cloneCard.querySelector('#deleteButton');
+  deleteBtnClone.addEventListener("click", () => deleteEntry());
   
   if (newHeading.value !== ''){
   listHeading.innerText = newHeading.value;
@@ -172,12 +172,6 @@ submitList.addEventListener("click", function(){
 function checked(){
     domCheckbox.click();
 }
-
-
-// function removeTodo(){
-//     todos[todos.length -1].remove();
-//     }
-
 
 
 function deleteEntry(){

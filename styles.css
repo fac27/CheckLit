@@ -21,6 +21,7 @@ html, body {
 
 ul{
     margin: 10px;
+    font-family: Arial, Helvetica, sans-serif;
 }
 
 li{
@@ -51,16 +52,16 @@ li p{
     width: 100%;
     min-height: 40vh;
     height: auto;
-    border: 1px solid red;
     flex-wrap: wrap;
 }
 
 
 .card {
     width: 80%;
-    height: 300px;
     background-color: rgba(172, 255, 47, 0.428);
     overflow: scroll;
+    border-radius: 4%;
+    font-family: 'poppins';
 }
 
 button {
@@ -103,6 +104,10 @@ input {
 
 
 /* Margin */
+.m-left-xs {
+    margin-left: 1rem;
+}
+
 .m-left {
     margin-left: 2rem;
 }
@@ -115,7 +120,15 @@ input {
     text-align: right;
 }
 
+.text-center {
+    text-align: center;
+}
+
 /* Spacing */
+
+.stack-xl {
+    margin-top: 4rem;
+}
 
 .stack-l {
     margin-top: 2rem;
@@ -123,6 +136,10 @@ input {
 
 .stack-m {
     margin-top: 1rem;
+}
+
+.stack-below {
+    margin-bottom: 2rem;
 }
 
 /* Flex */
