@@ -1,7 +1,10 @@
 // Access DOM
 
 const button = document.querySelector("#addNew");
-const btn = document.querySelectorAll("button");
+
+
+
+
 const checklist = document.querySelector("ul");
 const userInput = document.querySelector("#todo");
 const deleteButton = document.querySelector("#deleteButton");
@@ -53,7 +56,7 @@ function submitToDo(text,ul) {
       
         if (userInput.value !== ''){
           submitToDo(`${userInput.value}`);
-          console.log("working")
+        userInput.value = ""
         }
       else {
         errorMess.innerText = "Cannot add empty item";
@@ -63,11 +66,6 @@ function submitToDo(text,ul) {
       });
 
 
-      btn.forEach(btn => {
-        btn.addEventListener("click", function(){
-            console.log("!")
-        })
-      })
 
       
 
@@ -80,6 +78,7 @@ function newList() {
   const btnClone = cloneCard.querySelector("#addNew");
   const inputClone = cloneCard.querySelector("input");
   const ulClone = cloneCard.querySelector("ul")
+
   btnClone.addEventListener("click", () => {
     if (inputClone.value !== ''){
     submitToDo(inputClone.value,ulClone)
@@ -90,12 +89,20 @@ function newList() {
     ulClone.appendChild(errorMess);
     setTimeout(() => ulClone.removeChild(errorMess), 1000)
   }
+
+  ulClone.innerHTML = "";
+  btnClone.addEventListener("click", function(){
+    submitToDo(inputClone.value,ulClone)
+    inputClone.value = "";
+
   })
   const deleteBtnClone = cloneCard.querySelector('#deleteButton');
   deleteBtnClone.addEventListener("click", () => deleteEntry());
   
   if (newHeading.value !== ''){
   listHeading.innerText = newHeading.value;
+  newHeading.value = "";
+  newHeading.setAttribute("placeholder", `"Shopping List"`); 
   listContainer.appendChild(cloneCard);
   newListform.classList.add("displayNone")
   }
