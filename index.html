@@ -29,29 +29,26 @@
 
   <div class="listContainer flexColumn center stack-xl">
     <h2 class="stack-xl text-xl">My lists</h2>
-    <div id="card" class="card text-center stack-l" >
+    <div id="card" class="card text-center stack-l">
+      <button id="close-list">X</button>
       <h3 class="text-l text-center" id="list-heading">Shopping list</h3>
       <label for="todoName" class="stack-m text-m">Add item</label>
       <button  type="submit" class="stack-m text-xl" id="addNew">+</button>
       <input type="text" name="todoName" id="todo" class="stack-m stack-below">
-    
       <ul id="checklist">
         <li class="Todos">
           <span></span>
           <span class="task"></span>
         </li>
       </ul>
-    
       <template id="checklistrow">
         <li>
           <span></span>
           <span class="m-left-xs"></span>
         </li>
       </template>
-
     <label for="deleteItem">Remove item</label>
-    <button type="submit" id="deleteButton" class="text-xl stack-below">-</button>  
-
+    <button type="submit" id="deleteButton" class="text-xl stack-below">-</button>
   </div>
 </div>
     
