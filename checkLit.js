@@ -123,7 +123,7 @@ function checked() {
   domCheckbox.click();
 }
 
-// for all ticked items when delete btn clicked, remove
+// for all ticked items when delete btn clicked, remove item
 function deleteEntry() {
   const checkboxAll = document.querySelectorAll('[type*="checkbox"]');
   checkboxAll.forEach((checkbox) => {
