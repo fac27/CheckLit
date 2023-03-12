@@ -2,7 +2,6 @@
 
 const button = document.querySelector("#addNew");
 
-const btn = document.querySelectorAll("button");
 
 const checklist = document.querySelector("ul");
 
@@ -63,7 +62,7 @@ function submitToDo(text,ul) {
       
         if (userInput.value !== ''){
           submitToDo(`${userInput.value}`);
-          console.log("working")
+        userInput.value = ""
         }
       else {
         errorMess.innerText = "Cannot add empty item";
@@ -73,11 +72,6 @@ function submitToDo(text,ul) {
       });
 
 
-      btn.forEach(btn => {
-        btn.addEventListener("click", function(){
-            console.log("!")
-        })
-      })
 
       
 
@@ -90,12 +84,16 @@ function newList() {
   const btnClone = cloneCard.querySelector("button");
   const inputClone = cloneCard.querySelector("input");
   const ulClone = cloneCard.querySelector("ul")
+  ulClone.innerHTML = "";
   btnClone.addEventListener("click", function(){
     submitToDo(inputClone.value,ulClone)
+    inputClone.value = "";
   })
   
   if (newHeading.value !== ''){
   listHeading.innerText = newHeading.value;
+  newHeading.value = "";
+  newHeading.setAttribute("placeholder", `"Shopping List"`); 
   listContainer.appendChild(cloneCard);
   newListform.classList.add("displayNone")
   }
