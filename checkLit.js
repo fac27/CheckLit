@@ -63,10 +63,6 @@ function newList() {
   const btnClone = cloneCard.querySelector("#addNew");
   const ulClone = cloneCard.querySelector("ul");
   ulClone.innerHTML = "";
-  btnClone.addEventListener("click", () => {
-    submitToDo(inputClone.value, ulClone);
-    inputClone.value = "";
-  });
 
 // call closeList() - this can only be called on cloned cards as deleting the original prevents future cloning
   const closeBtnClone = cloneCard.querySelector('#close-list');    
@@ -76,6 +72,7 @@ function newList() {
   btnClone.addEventListener("click", () => {
     if (inputClone.value !== "") {
       submitToDo(inputClone.value, ulClone);
+      inputClone.value = "";
     } else {
       const errorMess = document.createElement("p");
       errorMess.innerText = "Cannot add empty item";
