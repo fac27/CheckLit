@@ -16,31 +16,6 @@ function test(name, testFunction) {
 }
 
 
-
-// Test 1: Add tasks to a list so that I can keep track of them
-
-// RED: a failing test
-// test("Submitting a new task adds it to the list", () => {
-//   equal(submitToDo(), "Add new task to the list")
-// });
-
-// function submitToDo(){}
-
-// GREEN: make the test pass (simplest level)
-
-// function submitToDo(){
-//     return "Add new task to the list";
-// }
-
-
-// GREEN: make the test pass
-
-
-
-/* See submitToDo in checkLit.js */
-
-  
-
   test("Submitting a new task adds it to the list", () => {
     submitToDo("test input") // call function, replicating user button "click"
 
@@ -74,6 +49,49 @@ function test(name, testFunction) {
   test("Test to see if checkbox works when checked", () => {
     checked();
     equal(domCheckbox.checked,true);
+  })
+
+  test("Submitting a new list entry creates new list card", () => {
+    const userInput = document.querySelector("#ListName");
+    userInput.value = "test list";
+    
+    newList(); // call newList() imitating button click
+  
+    cardList = document.querySelectorAll(".card");
+    
+    equal(cardList.length, 2, "A new card is added to the original card list");
+  
+    cardList[1].remove();
+  })
+  
+    test("New list card displays user input entered on form", () => {
+      const userInput = document.querySelector("#ListName");
+      userInput.value = "test input";
+      
+      newList(); // create new list card for test purpose
+      
+      cardList = document.querySelectorAll(".card"); // return list of cards
+      displayHeading = cardList[1].querySelector("#list-heading").innerText; // test card heading
+      
+      equal(displayHeading, "test input", "New card correctly displays test list heading"); // check test card heading matches "test input"
+  
+      cardList[1].remove();
+    })  
+
+  test("Deleting a list card removes it from the page", () => {
+    const userInput = document.querySelector("#ListName");
+    userInput.value = "test list";
+    
+    newList(); // create new list card for test purpose
+
+    let cardList = document.querySelectorAll(".card"); // cardList.length === 2
+    
+    closeList(cardList[1]); // call closeList() on test list
+
+    cardList = document.querySelectorAll(".card"); // rescan to see updated cardList length
+
+    equal(cardList.length, 1);
+
   })
 
 
