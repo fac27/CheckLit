@@ -10,17 +10,22 @@ The purpose of this repo is to document and collaborate on ``CheckLit`` using as
 
 #### Testing 
 [x] Check that passing a given input into our tests returns the expected output
+
 [x] Write tests to mimic the behaviour of a user performing different action
 
 #### JavaScript 
-[X] Write testable, modular functions
-[X] Write functions that add, remove or modify DOM nodes
-[X] Apply event listeners to HTML form elements
-[X] Use scope to control what variables are accessible inside functions and blocks
+[x] Write testable, modular functions
+
+[x] Write functions that add, remove or modify DOM nodes
+
+[x] Apply event listeners to HTML form elements
+
+[x] Use scope to control what variables are accessible inside functions and blocks
 
 #### Design 
-[X] Use CSS grid to create complex layouts
-[X] Use CSS grid to make layouts that adapt to the viewport size
+[x] Use CSS grid to create complex layouts
+
+[x] Use CSS grid to make layouts that adapt to the viewport size
 
 ### User stories
 
@@ -38,7 +43,7 @@ As a user, I want to:
 - Open CheckLit files in your editor
 - Install vsCode LiveServer or your editors equivalent to view CheckLit UI. Alternatively, open index.html from your local library.
 
-[webiste](fac27.github.io/CheckLit/)
+[fac27.github.io/CheckLit/](fac27.github.io/CheckLit/)
 
 
 ### Planning
