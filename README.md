@@ -22,7 +22,9 @@ As a user, I want to:
 - Open CheckLit files in your editor
 - Install vsCode ```LiveServer``` or equivalent to view the CheckLit UI. Alternatively, open ```index.html``` from your local library.
 
-[fac27.github.io/CheckLit/](fac27.github.io/CheckLit/)
+<a style="text-align:center" href="fac27.github.io/CheckLit/">fac27.github.io/CheckLit/</a>
+
+*Web link not ready for use, please follow local access instructions above*
 
 ### Learning objectives
 
