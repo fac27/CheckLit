@@ -6,6 +6,24 @@ A FAC project using test-driven-development methods. ``CheckLit`` is an online c
 
 The purpose of this repo is to document and collaborate on ``CheckLit`` using asynchronous working methods.
 
+### User stories
+
+As a user, I want to:
+- Create and view multiple checklists
+- Add and delete items from my lists
+- Mark items as completed
+- Remove entire lists from the page
+- View checklists on all my devices
+
+### Instructions
+
+- Download CheckLit files
+``git clone https://github.com/fac27/CheckLit main``
+- Open CheckLit files in your editor
+- Install vsCode ```LiveServer``` or equivalent to view the CheckLit UI. Alternatively, open ```index.html``` from your local library.
+
+[fac27.github.io/CheckLit/](fac27.github.io/CheckLit/)
+
 ### Learning objectives
 
 #### Testing 
@@ -26,24 +44,6 @@ The purpose of this repo is to document and collaborate on ``CheckLit`` using as
 [x] Use CSS grid to create complex layouts
 
 [x] Use CSS grid to make layouts that adapt to the viewport size
-
-### User stories
-
-As a user, I want to:
-- Create and view multiple checklists
-- Add and delete items from my lists
-- Mark items as completed
-- Remove entire lists from the page
-- View checklists on all my devices
-
-### Instructions
-
-- Download CheckLit files
-``git clone https://github.com/fac27/CheckLit main``
-- Open CheckLit files in your editor
-- Install vsCode LiveServer or your editors equivalent to view CheckLit UI. Alternatively, open index.html from your local library.
-
-[fac27.github.io/CheckLit/](fac27.github.io/CheckLit/)
 
 
 ### Planning
