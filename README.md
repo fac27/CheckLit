@@ -4,18 +4,46 @@ A FAC project using test-driven-development methods. ``CheckLit`` is an online c
 
 ### Purpose
 
-The purpose of this repo is to document and collaborate on ``CheckLit``.
+The purpose of this repo is to document and collaborate on ``CheckLit`` using asynchronous working methods.
+
+### User stories
+
+As a user, I want to:
+- Create and view multiple checklists
+- Add and delete items from my lists
+- Mark items as completed
+- Remove entire lists from the page
+- View checklists on all my devices
 
 ### Instructions
 
-Run locally:
+- Download CheckLit files
+``git clone https://github.com/fac27/CheckLit main``
+- Open CheckLit files in your editor
+- Install vsCode ```LiveServer``` or equivalent to view the CheckLit UI. Alternatively, open ```index.html``` from your local library.
 
-git clone https://github.com/fac27/CheckLit main
-- Browse files using vsCode
-- Install vsCode LiveServer or open index.html from local library to view UI
+[fac27.github.io/CheckLit/](fac27.github.io/CheckLit/)
 
-[webiste](fac27.github.io/CheckLit/)
+### Learning objectives
 
+#### Testing 
+[x] Check that passing a given input into our tests returns the expected output
+
+[x] Write tests to mimic the behaviour of a user performing different action
+
+#### JavaScript 
+[x] Write testable, modular functions
+
+[x] Write functions that add, remove or modify DOM nodes
+
+[x] Apply event listeners to HTML form elements
+
+[x] Use scope to control what variables are accessible inside functions and blocks
+
+#### Design 
+[x] Use CSS grid to create complex layouts
+
+[x] Use CSS grid to make layouts that adapt to the viewport size
 
 
 ### Planning
@@ -27,3 +55,4 @@ Create a logo using DALL.E
 
 Sketch a design using [Miro](https://miro.com/app/board/uXjVPhyAlD0=/)
 ![wireframe](/Img/CheckLit%20wireframe%20.png)
+
