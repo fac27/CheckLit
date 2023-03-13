@@ -6,6 +6,17 @@ A FAC project using test-driven-development methods. ``CheckLit`` is an online c
 
 The purpose of this repo is to document and collaborate on ``CheckLit``.
 
+### Instructions
+
+Run locally:
+
+git clone https://github.com/fac27/CheckLit main
+- Browse files using vsCode
+- Install vsCode LiveServer or open index.html from local library to view UI
+
+[webiste](fac27.github.io/CheckLit/)
+
+
 
 ### Planning
 
