@@ -50,6 +50,9 @@ As a user, I want to:
 
 ### Planning
 
+We took inspiration from ``Google Keep``
+[Google-keep](Img/google keep.png)
+
 Create a logo using DALL.E
 <img src="Img/DALL·E 2023-03-02 13.59.11 - A simple, bright logo for a check list app.png" width="200px"/>
 <img src="Img/image.jpg" width="200px"/>
