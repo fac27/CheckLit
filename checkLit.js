@@ -110,9 +110,7 @@ listFormBtn.addEventListener("click", function () {
 });
 
 // call newList() 
-submitList.addEventListener("click", function () {
-  newList();
-});
+submitList.addEventListener("click", newList)
 
 // checked() for test
 function checked() {
@@ -131,9 +129,7 @@ function deleteEntry() {
 }
 
 // call deleteEntry()
-deleteButton.addEventListener("click", () => {
-  deleteEntry();
-});
+deleteButton.addEventListener("click", deleteEntry)
 
 // remove entire list card
 function closeList(card) {
