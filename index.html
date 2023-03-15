@@ -9,12 +9,17 @@
     <link href="https://fonts.googleapis.com/css2?family=Fredoka+One&family=Playfair+Display:wght@400;500;600;700&family=Poppins:wght@400;500&display=swap" rel="stylesheet">
 </head>
 <body>
-  <div class="m-left" id="Mobile">
-    <img src="/Img/logo.jpeg" width="300px" class="text-right">
-    <h1 class="text-xl stack-m text-right m-right"> CheckLit</h1>
-    <h2 class="text-m stack-m text-right m-right">Unlock your productivity potential</h2>
+  <div class="head-web">
+    <div class="m-left">
+      <img src="/Img/logo.jpeg" width="300px" >
+    </div>
+    <div>
+      <h1 class="text-xl stack-m m-right text-right"> CheckLit</h1>
+      <h2 class="m-left text-m stack-m text-right m-right">Unlock your productivity potential</h2>
+    </div>
   </div>
-  <div class="desktop flexRow center" id="desktop">
+
+  <!-- <div class="desktop flexRow center" id="desktop">
     <div class="Container flexRow center">
         <h1 class="text-xxl stack-m"> CheckLit</h1>
     </div>
@@ -22,9 +27,9 @@
         <img src="Img/logo.jpeg" width="200px" class="text-right stack-below">
         <h2 class="text-l stack-l text-right m-right">Unlock your productivity potential</h2>
     </div>
-  </div>
+  </div> -->
   
-  <div id="addList" class="m-left stack-xl">
+  <div id="addList" class="m-left stack-xl form-web">
     <label class="text-l">New list</label>
     <button id="list" class="text-xl">+</button>
   
@@ -39,11 +44,10 @@
   <div class="listContainer flexColumn center stack-xl">
     <h2 class="stack-xl text-xl">My lists</h2>
     <div id="card" class="card text-center stack-l">
-      <button id="close-list">X</button>
+      <button id="close-list" class="stack-m">X</button>
       <h3 class="text-l text-center" id="list-heading">Shopping list</h3>
-      <label for="todoName" class="stack-m text-m">Add item</label>
-      <button  type="submit" class="stack-m text-xl" id="addNew">+</button>
-      <input type="text" name="todoName" id="todo" class="stack-m stack-below">
+      <input type="text" name="todoName" id="todo" class="stack-m stack-below" placeholder="Add item">
+      <button  type="submit" class="stack-m text-l" id="addNew">+</button>
       <ul id="checklist">
         <li class="Todos">
           <span></span>
@@ -57,7 +61,7 @@
         </li>
       </template>
     <label for="deleteItem">Remove item</label>
-    <button type="submit" id="deleteButton" class="text-xl stack-below">-</button>
+    <button type="submit" id="deleteButton" class="text-l stack-below">-</button>
   </div>
 </div>
     
