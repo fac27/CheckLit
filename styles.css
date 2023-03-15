@@ -103,6 +103,7 @@ input {
 
 
 
+
 /* Margin */
 .m-left-xs {
     margin-left: 1rem;
@@ -174,5 +175,43 @@ input {
     display: none;
 }
 
+#desktop{
+   display: none;
+ }
 
+ #addList{
+    padding-bottom: 10px;
+        border-bottom: solid 1px black;
+ }
+
+@media screen and (min-width: 700px) {
+ #Mobile{
+    display: none;
+ }
+
+ #desktop{
+    width: 100%;
+    height: 50vh;
+    display: flex;
+ }
+
+ .Container{
+width: 50%;
+height: 100%;
+ }
+ 
+  }
+
+  @media screen and (min-width: 900px) {
+    #desktop{
+        width: 90%;
+        margin: 0 auto;
+     }
+
+     #addList{
+        width: 70%;
+        margin: 0 auto;
+     }
+    
+  }
 

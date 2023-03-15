@@ -63,7 +63,6 @@ function newList() {
   const btnClone = cloneCard.querySelector("#addNew");
   const ulClone = cloneCard.querySelector("ul");
   ulClone.innerHTML = "";
-
 // call closeList() - this can only be called on cloned cards as deleting the original prevents future cloning
   const closeBtnClone = cloneCard.querySelector('#close-list');    
   closeBtnClone.addEventListener("click", () => closeList(cloneCard));
