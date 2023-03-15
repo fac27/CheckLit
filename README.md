@@ -53,11 +53,14 @@ As a user, I want to:
 We took inspiration from ``Google Keep``
 ![Google-keep](Img/google-keep.png)
 
-Create a logo using DALL.E
+We created a logo using DALL.E
+<br>
 <img src="Img/DALL·E 2023-03-02 13.59.11 - A simple, bright logo for a check list app.png" width="200px"/>
+<br>
 <img src="Img/image.jpg" width="200px"/>
+<br>
 <img src="Img/image-removebg-preview.png" width="200px"/>
 
-Sketch a design using [Miro](https://miro.com/app/board/uXjVPhyAlD0=/)
+We sketched a design using [Miro](https://miro.com/app/board/uXjVPhyAlD0=/)
 ![wireframe](/Img/CheckLit%20wireframe%20.png)
 
