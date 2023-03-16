@@ -21,30 +21,24 @@ html, body {
 
 ul{
     margin: 10px;
-    font-family: Arial, Helvetica, sans-serif;
+    font-family: 'poppins';
 }
 
 li{
     display: flex;
 }
 
-li p{
-    margin: 0px 5px;
-}
-
-.lineThrough{
+/* .lineThrough{
     text-decoration: line-through;
     color: gray;
-}
+} */
 
 .newListForm{
     width: 300px;
     height: 300px;
     background-color:#af2fcc;
-    /* position: absolute; */
     top: 50%;
     left: 50%;
-    /* transform: translate(-50%,-50%); */
     border-radius: 50%;
 }
 
@@ -57,10 +51,10 @@ li p{
 
 
 .card {
-    width: 80%;
+    width: 300px;
     background-color: #E2EF70;
     overflow: scroll;
-    border-radius: 4%;
+    border-radius: 20px;
     font-family: 'poppins';
 }
 
@@ -75,7 +69,7 @@ button:hover {
 }
 
 input {
-  font-family: 'Fredoka One';
+  font-family: 'poppins';
   font-size: large;
 }
 
@@ -123,6 +117,12 @@ input {
 
 .text-center {
     text-align: center;
+}
+.m-multi {
+  margin-top: 0;
+  margin-left: 1rem;
+  margin-right: 1rem;
+  margin-bottom: 1rem;
 }
 
 /* Spacing */
@@ -175,16 +175,16 @@ input {
     display: none;
 }
 
-#desktop{
+/* #desktop{
    display: none;
- }
+ } */
 
- #addList{
+ /* #addList{
     padding-bottom: 10px;
         border-bottom: solid 1px black;
- }
+ } */
 
-@media screen and (min-width: 700px) {
+/* @media screen and (min-width: 700px) {
  #Mobile{
     display: none;
  }
@@ -202,6 +202,8 @@ height: 100%;
  
   }
 
+
+
   @media screen and (min-width: 900px) {
     #desktop{
         width: 90%;
@@ -213,5 +215,36 @@ height: 100%;
         margin: 0 auto;
      }
     
-  }
+  } */
 
+.head-web {
+}
+
+.form-web{
+}
+
+.card-web {
+}
+
+
+  @media screen and (min-width: 700px) {
+    .text-right {
+        text-align: center;
+    }
+    .head-web {
+        display: flex;
+        flex-direction: row-reverse;
+        align-items: center;
+        justify-content: space-evenly;
+        height: 100vh;
+    }
+    .form-web {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-direction: column;
+    }
+    .card-web {
+      flex-direction: unset;
+    }
+  }
