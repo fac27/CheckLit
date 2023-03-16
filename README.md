@@ -33,6 +33,15 @@ As a user, I want to:
 
 [x] Write tests to mimic the behaviour of a user performing different action
 
+We developed a testing library to test that the user stories were met. Each test mimics the necessary user actions prior to the event. The tests run on page load and appear in the console.
+![testing-lib](Img/testing-library.jpeg)
+
+A code example testing newList() to ensure that submitting a new list entry creates a new list card
+![testing-example](Img/test-code.jpeg)
+
+The test output in the console
+![test-output](/Img/testing-console.png)
+
 #### JavaScript 
 [x] Write testable, modular functions
 
