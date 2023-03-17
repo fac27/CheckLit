@@ -47,16 +47,6 @@ function removeErrorMessage(relevantCard) {
   setTimeout(() => relevantCard.removeChild(errorMess), 1000)
 }
 
-// Call submitToDo()
-button.addEventListener("click", () => {
-  if (userInput.value !== "") {
-    submitToDo(`${userInput.value}`);
-    userInput.value = "";
-  } else {
-    errorMessage(card, "Cannot add empty item");
-    removeErrorMessage(card);
-  }
-});
 
 // Generate random background color for new list card
 function randomColor(clone) {
@@ -67,20 +57,20 @@ function randomColor(clone) {
 
 function newList() {
   const cloneCard = card.cloneNode(true);
-
   randomColor(cloneCard);
-
-  // prevent ul items from copying onto new list card
-  const inputClone = cloneCard.querySelector("input");
-  const btnClone = cloneCard.querySelector("#addNew");
+  
+  // Empty cloned list of previous li elements
   const ulClone = cloneCard.querySelector("ul");
   ulClone.innerHTML = "";
-  // call closeList() - this can only be called on cloned cards as deleting the original prevents future cloning
+
+  // Call closeList() - this can only be called on cloned cards as deleting the original prevents future cloning
   const closeBtnClone = cloneCard.querySelector("#close-list");
   closeBtnClone.addEventListener("click", () => closeList(cloneCard));
 
-  // enable submitToDo() on newList card
+  // Add submitToDo() event listener to new list card
+  const btnClone = cloneCard.querySelector("#addNew");
   btnClone.addEventListener("click", () => {
+    const inputClone = cloneCard.querySelector("input");
     if (inputClone.value !== "") {
       submitToDo(inputClone.value, ulClone);
       inputClone.value = "";
@@ -90,19 +80,16 @@ function newList() {
     }
   });
 
-  // enable deleteEntry() on newList card
-  const deleteBtnClone = cloneCard.querySelector("#deleteButton");
-  deleteBtnClone.addEventListener("click", () => deleteEntry());
+  deleteEntryClone(cloneCard);
 
-  // create new list
+  // Create new list
   const newHeading = document.querySelector("#ListName");
   const listHeading = cloneCard.querySelector("#list-heading");
 
   if (newHeading.value !== "") {
     listHeading.innerText = newHeading.value;
     newHeading.value = "";
-    newHeading.setAttribute("placeholder", `"Shopping List"`);
-    listContainer.appendChild(cloneCard); // append newList card to listContainer div
+    listContainer.appendChild(cloneCard); 
     newListform.classList.add("displayNone"); // remove form
   } else {
     errorMessage(newListform, "List heading cannot be empty")
@@ -111,12 +98,11 @@ function newList() {
 }
 // END newList()
 
-// checked function for test purposes
 function checked() {
   domCheckbox.click();
 }
 
-// for all ticked items when delete btn clicked, remove item
+// For all ticked items when delete btn clicked, remove item
 function deleteEntry() {
   const checkboxAll = document.querySelectorAll('[type*="checkbox"]');
   checkboxAll.forEach((checkbox) => {
@@ -127,12 +113,28 @@ function deleteEntry() {
   });
 }
 
-// remove entire list card
-function closeList(card) {
-  card.remove();
+function deleteEntryClone(relevantCard) {
+  const deleteBtnClone = relevantCard.querySelector("#deleteButton");
+  deleteBtnClone.addEventListener("click", () => deleteEntry());
+}
+
+// Remove entire list card
+function closeList(relevantCard) {
+  relevantCard.remove();
 }
 
 // Event Listeners
+
+// Call submitToDo()
+button.addEventListener("click", () => {
+  if (userInput.value !== "") {
+    submitToDo(`${userInput.value}`);
+    userInput.value = "";
+  } else {
+    errorMessage(card, "Cannot add empty item");
+    removeErrorMessage(card);
+  }
+});
 
 // call newList()
 submitList.addEventListener("click", newList);
