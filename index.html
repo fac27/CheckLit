@@ -15,39 +15,29 @@
     </div>
     <div>
       <h1 class="text-xl stack-m m-right text-right"> CheckLit</h1>
-      <h2 class="m-left text-m stack-m text-right m-right">Unlock your productivity potential</h2>
+      <h2 class="text-m stack-m m-right m-left text-right">Unlock your productivity potential</h2>
     </div>
   </div>
-
-  <!-- <div class="desktop flexRow center" id="desktop">
-    <div class="Container flexRow center">
-        <h1 class="text-xxl stack-m"> CheckLit</h1>
-    </div>
-    <div class="Container flexColumn center">
-        <img src="Img/logo.jpeg" width="200px" class="text-right stack-below">
-        <h2 class="text-l stack-l text-right m-right">Unlock your productivity potential</h2>
-    </div>
-  </div> -->
-  
-  <div id="addList" class="m-left stack-xl form-web">
+  <div id="addList" class="m-left form-web">
     <label class="text-l">New list</label>
     <button id="list" class="text-xl">+</button>
-  
-
-    <div class="newListForm space-evenly flexColumn displayNone stack-l">
-      <input type="text" name="ListName" id="ListName" placeholder='"Shopping list"' class="stack-xl">
+    
+  <!-- New list pop up form -->
+    <div class="newListForm center flexColumn displayNone stack-l">
+      <input type="text" name="ListName" id="ListName" placeholder='"Shopping list"' class="stack-xl text-center">
       <button type="submit" id="newList" class="text-xl">+</button>
     </div>
   </div>
 
   <h2 class="stack-xl text-xl text-center">My lists</h2>
 
+  <!-- List cards -->
   <div class="listContainer flexColumn center stack-xl card-web">
     <div id="card" class="card text-center m-multi">
-      <button id="close-list" class="stack-m">X</button>
+      <button id="close-list" class="stack-m closebtn">X</button>
       <h3 class="text-l text-center" id="list-heading">Shopping list</h3>
-      <input type="text" name="todoName" id="todo" class="stack-m stack-below" placeholder="Add item">
-      <button  type="submit" class="stack-m text-l" id="addNew">+</button>
+      <input type="text" name="todoName" id="todo" class="text-center" placeholder="Add item">
+      <button  type="submit" class="text-l" id="addNew">+</button>
       <ul id="checklist">
         <li class="Todos">
           <span></span>
