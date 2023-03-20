@@ -55,6 +55,7 @@ function randomColor(clone) {
 
 function newList() {
   const cloneCard = card.cloneNode(true);
+  cloneCard.classList.remove('displayNone');
   randomColor(cloneCard);
 
   // Empty cloned list of previous li elements
