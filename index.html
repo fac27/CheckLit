@@ -1,62 +1,88 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>CheckLit</title>
-    <link rel="stylesheet" href="styles.css">
-    <link href="https://fonts.googleapis.com/css2?family=Fredoka+One&family=Playfair+Display:wght@400;500;600;700&family=Poppins:wght@400;500&display=swap" rel="stylesheet">
-</head>
-<body>
-  <div class="head-web">
-    <div class="m-left">
-      <img src="Img/logo.jpeg" width="300px" >
+    <link rel="stylesheet" href="styles.css" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Fredoka+One&family=Playfair+Display:wght@400;500;600;700&family=Poppins:wght@400;500&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <div class="head-web">
+      <div class="m-left">
+        <img src="Img/logo.jpeg" width="300px" />
+      </div>
+      <div>
+        <h1 class="text-xl stack-m m-right text-right">CheckLit</h1>
+        <h2 class="text-m stack-m m-right m-left text-right">
+          Unlock your productivity potential
+        </h2>
+      </div>
     </div>
-    <div>
-      <h1 class="text-xl stack-m m-right text-right"> CheckLit</h1>
-      <h2 class="text-m stack-m m-right m-left text-right">Unlock your productivity potential</h2>
+    <div id="addList" class="m-left form-web">
+      <label class="text-l">New list</label>
+      <button id="list" class="text-xl">+</button>
+      <!-- New list pop up form -->
+      <div class="newListForm center flexColumn displayNone stack-l">
+        <input
+          type="text"
+          name="ListName"
+          id="ListName"
+          placeholder='"Shopping list"'
+          class="stack-xl text-center"
+        />
+        <button type="submit" id="newList" class="text-xl">+</button>
+      </div>
     </div>
-  </div>
-  <div id="addList" class="m-left form-web">
-    <label class="text-l">New list</label>
-    <button id="list" class="text-xl">+</button>
-    
-  <!-- New list pop up form -->
-    <div class="newListForm center flexColumn displayNone stack-l">
-      <input type="text" name="ListName" id="ListName" placeholder='"Shopping list"' class="stack-xl text-center">
-      <button type="submit" id="newList" class="text-xl">+</button>
+    <h2 class="stack-xl text-xl text-center">My lists</h2>
+    <!-- List cards -->
+    <div class="listContainer flexColumn center stack-xl card-web">
+      <div id="card" class="card text-center m-multi">
+        <button id="close-list" class="stack-m closebtn">X</button>
+        <h3 class="text-l text-center" id="list-heading">Shopping list</h3>
+        <input
+          type="text"
+          name="todoName"
+          id="todo"
+          class="text-center"
+          placeholder="Add item"
+        />
+        <button type="submit" class="text-l" id="addNew">+</button>
+        <ul id="checklist">
+          <li class="Todos">
+            <span><input type="checkbox" /></span>
+            <span class="m-left-xs">Apples</span>
+          </li>
+          <li class="Todos">
+            <span><input type="checkbox" /></span>
+            <span class="m-left-xs">Bread</span>
+          </li>
+          <li class="Todos">
+            <span><input type="checkbox" /></span>
+            <span class="m-left-xs">Raisins</span>
+          </li>
+          <li class="Todos">
+            <span><input type="checkbox" /></span>
+            <span class="m-left-xs">Butter</span>
+          </li>
+        </ul>
+        <template id="checklistrow">
+          <li>
+            <span></span>
+            <span class="m-left-xs"></span>
+          </li>
+        </template>
+        <label for="deleteItem">Remove item</label>
+        <button type="submit" id="deleteButton" class="text-l stack-below">
+          -
+        </button>
+      </div>
     </div>
-  </div>
-
-  <h2 class="stack-xl text-xl text-center">My lists</h2>
-
-  <!-- List cards -->
-  <div class="listContainer flexColumn center stack-xl card-web">
-    <div id="card" class="card text-center m-multi">
-      <button id="close-list" class="stack-m closebtn">X</button>
-      <h3 class="text-l text-center" id="list-heading">Shopping list</h3>
-      <input type="text" name="todoName" id="todo" class="text-center" placeholder="Add item">
-      <button  type="submit" class="text-l" id="addNew">+</button>
-      <ul id="checklist">
-        <li class="Todos">
-          <span></span>
-          <span class="task"></span>
-        </li>
-      </ul>
-      <template id="checklistrow">
-        <li>
-          <span></span>
-          <span class="m-left-xs"></span>
-        </li>
-      </template>
-    <label for="deleteItem">Remove item</label>
-    <button type="submit" id="deleteButton" class="text-l stack-below">-</button>
-  </div>
-</div>
-    
-<script src="checkLit.js"></script>
-<script src="testing.js"></script>   
-</body>
-
+    <script src="checkLit.js"></script>
+    <script src="testing.js"></script>
+  </body>
 </html>

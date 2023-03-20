@@ -10,7 +10,6 @@ const listFormBtn = document.querySelector("#list");
 const submitList = document.querySelector("#newList");
 const newListform = document.querySelector(".newListForm");
 const listContainer = document.querySelector(".listContainer");
-const task = document.querySelector(".task");
 const todos = document.querySelectorAll(".Todos");
 const card = document.getElementById("card");
 
@@ -43,10 +42,9 @@ function errorMessage(relevantCard, text) {
 }
 
 function removeErrorMessage(relevantCard) {
-  const errorMess = relevantCard.querySelector('p')
-  setTimeout(() => relevantCard.removeChild(errorMess), 1000)
+  const errorMess = relevantCard.querySelector("p");
+  setTimeout(() => relevantCard.removeChild(errorMess), 1000);
 }
-
 
 // Generate random background color for new list card
 function randomColor(clone) {
@@ -58,7 +56,7 @@ function randomColor(clone) {
 function newList() {
   const cloneCard = card.cloneNode(true);
   randomColor(cloneCard);
-  
+
   // Empty cloned list of previous li elements
   const ulClone = cloneCard.querySelector("ul");
   ulClone.innerHTML = "";
@@ -89,10 +87,10 @@ function newList() {
   if (newHeading.value !== "") {
     listHeading.innerText = newHeading.value;
     newHeading.value = "";
-    listContainer.appendChild(cloneCard); 
+    listContainer.appendChild(cloneCard);
     newListform.classList.add("displayNone"); // remove form
   } else {
-    errorMessage(newListform, "List heading cannot be empty")
+    errorMessage(newListform, "List heading cannot be empty");
     removeErrorMessage(newListform);
   }
 }
