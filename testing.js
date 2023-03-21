@@ -16,23 +16,21 @@ function test(name, testFunction) {
 }
 
 
-  test("Submitting a new task adds it to the list", () => {
+  test("submitToDo() adds a new task to the list", () => {
     submitToDo("test input") // call function, replicating user button "click"
 
     const listItem = document.querySelector("#checklist li:last-child"); // access the output of the test submitToDo("test input")
     const textInput = listItem.querySelector("span:last-child").textContent;
 
+    equal(checklist.children.length, 1, "List item is added to empty list to return list length of 1"); // checks the <ul> length to see if new <li> has been added (submitToDo adds a new <li> to the list so there should now be 2 in total (1 - apples, 2 - test input)
+    equal(checklist.children[0].tagName, "LI", "new <li> element appears in the list"); // checks for new <li> element
+    equal(textInput, "test input", "inner text of <li> is as expected"); // checks second <span> text value wrapped in the the <li>
 
-    equal(checklist.children.length, 2); // checks the <ul> length to see if new <li> has been added (submitToDo adds a new <li> to the list so there should now be 2 in total (1 - apples, 2 - test input)
-    equal(checklist.children[1].tagName, "LI"); // checks for new <li> element
-    equal(textInput, "test input"); // checks second <span> text value wrapped in the the <li>
-
-    
     listItem.remove() // remove the test output from the DOM
 
   });
 
-  test("Deleting an entry removes it from the list", () => {
+  test("deleteEntry() removes an entry from the list", () => {
     submitToDo("test input");
     
     const listItem = document.querySelector("#checklist li:last-child"); // access the checkbox output of the test submitToDo("test input")
@@ -41,7 +39,7 @@ function test(name, testFunction) {
 
     deleteEntry();
 
-    equal(checklist.children.length, 1) // checks the "test input" li item was removed and the checklist length returns to 1    
+    equal(checklist.children.length, 0, "list item was added and removed to result in a list length of 0") // checks the "test input" li item was removed and the checklist length returns to 1    
 
   });
 
@@ -51,7 +49,7 @@ function test(name, testFunction) {
     equal(domCheckbox.checked,true);
   })
 
-  test("Submitting a new list entry creates new list card", () => {
+  test("newList() submits a new list entry and creates new list card", () => {
     const userInput = document.querySelector("#ListName");
     userInput.value = "test list";
     
