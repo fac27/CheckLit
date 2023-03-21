@@ -1,21 +1,9 @@
-// Access DOM
-
-const button = document.querySelector("#addNew");
-const checklist = document.querySelector("ul");
-const userInput = document.querySelector("#todo");
-const deleteButton = document.querySelector("#deleteButton");
-const domCheckbox = document.createElement("input");
-domCheckbox.type = "checkbox";
-const listFormBtn = document.querySelector("#list");
-const submitList = document.querySelector("#newList");
+// Global variables
 const newListform = document.querySelector(".newListForm");
-const listContainer = document.querySelector(".listContainer");
-const todos = document.querySelectorAll(".Todos");
 const card = document.getElementById("card");
 
 function submitToDo(text, ul) {
-  if ("content" in document.createElement("template")) {
-    // test to see if the browser supports the HTML template element by checking for the presence of the template element's content attribute.
+  if ("content" in document.createElement("template")) {// test to see if the browser supports the HTML template element by checking for the presence of the template element's content attribute.
     const checklistRow = document.querySelector("#checklistrow");
     const clone = checklistRow.content.cloneNode(true); // access the <template> element and clone to create a new row
     let li = clone.querySelectorAll("span"); // access <span> elements within <li> of the new row
@@ -27,7 +15,10 @@ function submitToDo(text, ul) {
 
     if (ul) {
       ul.appendChild(clone);
-    } else checklist.appendChild(clone);
+    } else {
+      const checklist = document.querySelector("ul");
+      checklist.appendChild(clone);
+    }
   } else {
     // Find another way to add the rows to the table because  the HTML template element is not supported
   }
@@ -36,7 +27,6 @@ function submitToDo(text, ul) {
 function errorMessage(relevantCard, text) {
   const errorMess = document.createElement("p");
   errorMess.classList.add("remove-default");
-  // text = "Cannot add empty item";
   errorMess.innerText = text;
   relevantCard.appendChild(errorMess);
 }
@@ -88,6 +78,7 @@ function newList() {
   if (newHeading.value !== "") {
     listHeading.innerText = newHeading.value;
     newHeading.value = "";
+    const listContainer = document.querySelector(".listContainer");
     listContainer.appendChild(cloneCard);
     newListform.classList.add("displayNone"); // remove form
   } else {
@@ -97,6 +88,8 @@ function newList() {
 }
 // END newList()
 
+const domCheckbox = document.createElement("input");
+domCheckbox.type = "checkbox";
 function checked() {
   domCheckbox.click();
 }
@@ -125,7 +118,9 @@ function closeList(relevantCard) {
 // Event Listeners
 
 // Call submitToDo()
-button.addEventListener("click", () => {
+const submitToDoButton = document.querySelector("#addNew");
+submitToDoButton.addEventListener("click", () => {
+  const userInput = document.querySelector("#todo");
   if (userInput.value !== "") {
     submitToDo(`${userInput.value}`);
     userInput.value = "";
@@ -136,12 +131,20 @@ button.addEventListener("click", () => {
 });
 
 // call newList()
+const submitList = document.querySelector("#newList");
 submitList.addEventListener("click", newList);
 
 // call deleteEntry()
+const deleteButton = document.querySelector("#deleteButton");
 deleteButton.addEventListener("click", deleteEntry);
 
+
+
 // Remove form from view
-listFormBtn.addEventListener("click", function () {
+
+function closeForm() {
   newListform.classList.remove("displayNone");
-});
+}
+
+const listFormBtn = document.querySelector("#list");
+listFormBtn.addEventListener("click", closeForm);
